@@ -1,0 +1,17 @@
+.scroll-container {display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 15px;
+    padding: 10px;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+.scroll-container-img {
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    scroll-snap-align: start;
+}
