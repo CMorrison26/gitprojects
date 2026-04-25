@@ -1,4 +1,6 @@
-.scroll-container {display: flex;
+
+/* selector */
+.scroll-container {
     overflow-x: auto;
     white-space: nowrap;
     gap: 15px;
@@ -7,11 +9,29 @@
     scroll-snap-type: x mandatory;
 }
 
-.scroll-container-img {
+
+/* selector */
+.scroll-track {
+    display: flex;
+    animation: scroll 10s linear infinite;
+}
+
+/* descendent selector */
+.scroll-track img {
     display: inline-block;
-    height: 200px;
-    width: 200px;
+    height: 100px;
+    width: 100px;
     flex-shrink: 0;
     border-radius: 8px;
     scroll-snap-align: start;
+}
+
+/* At-Rule responsible for scrolling speed */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
