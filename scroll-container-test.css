@@ -19,19 +19,27 @@
 /* descendent selector */
 .scroll-track img {
     display: inline-block;
-    height: 100px;
-    width: 100px;
+    height: 100%;
+    width: 200px;
     flex-shrink: 0;
-    border-radius: 8px;
+    /* border-radius: 8px; */
+    flex: 0 0 calc(16.7% - 0 px);
+    object-fit: cover;
     scroll-snap-align: start;
 }
 
-/* At-Rule responsible for scrolling speed */
-@keyframes scroll {
+/* At-Rule responsible for scrolling speed 
+This will surpercede the snapping requirements
+from the previous selector
+Comment out the following lines to use
+snapping in the previous selector
+*/
+
+/* @keyframes scroll {
     0% {
         transform: translateX(0);
     }
     100% {
         transform: translateX(-50%);
     }
-}
+} */
