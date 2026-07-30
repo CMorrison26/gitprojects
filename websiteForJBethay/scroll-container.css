@@ -1,8 +1,8 @@
 /* selector */
 .scroll-container {
     overflow-x: auto;
-    white-space: nowrap;
-    gap: 15px;
+    width: 100%;
+    box-sizing: border-box;
     padding: 10px;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
@@ -12,32 +12,27 @@
 /* selector */
 .scroll-track {
     display: flex;
-    /*Missing the following line
-    causes the first 2 images to be cut off */
     justify-content: flex-start;
-    /*gap: 15px;*/
+    align-items: flex-start;
 }
 
 
 .scroll-track .image-wrapper {
-    flex: 0 0 calc(33.333% - 10px);
+    flex: 0 0 33.333%;
+    box-sizing: border-box;
+    padding: 0 8px;
     scroll-snap-align: start;
+    /* prevent swipe gestures from skipping past more than one image */
+    scroll-snap-stop: always;
     display: flex;
     justify-content: center;
-    align-items: center;
-
+    align-items: flex-start;
 }
 
 
 .scroll-track .image-wrapper img {
+    display: block;
     max-width: 100%;
-    max-height: 100%;
     height: auto;
-    width: auto;
     border-radius: 8px;
-    object-fit: contain;
-
 }
-
-
-
